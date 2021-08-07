@@ -1,0 +1,131 @@
+1.SELECT * 
+FROM emp 
+WHERE job LIKE 'CLERK'
+
+2.SELECT * 
+FROM emp 
+WHERE job IN ('CLERK','MANAGER')
+
+3.SELECT DATE('now')
+
+4.SELECT * 
+FROM emp 
+WHERE sal BETWEEN 500 AND 1000
+
+5.SELECT * 
+FROM emp 
+WHERE hiredate LIKE '%DEC%'
+
+6.SELECT * 
+FROM emp 
+WHERE sal NOT BETWEEN 1000 AND 2500
+
+7.SELECT * 
+FROM emp 
+WHERE sal IN (800,950,3000,5000)
+
+8.  SELECT * 
+  FROM emp 
+  WHERE ename LIKE '_L%';
+
+9.  SELECT * 
+  FROM emp 
+  WHERE ename LIKE '%D';
+
+10.  SELECT * 
+  FROM emp
+  WHERE LENGTH(ename) =5;
+
+11.  SELECT * 
+  FROM emp
+  WHERE ename LIKE 'T%R';
+
+12.  SELECT * 
+  FROM emp
+  WHERE ename LIKE '%A%';
+
+13.  SELECT * 
+  FROM emp
+  WHERE hiredate BETWEEN '1%' AND '18%';
+  
+14.  SELECT empno 
+  FROM emp
+  WHERE ename LIKE 'James';
+  
+15.  SELECT sal 
+  FROM emp
+  WHERE ename LIKE 'KING';
+  
+16.  SELECT ename 
+  FROM emp
+  WHERE job LIKE 'PRESIDENT';
+  
+17.  SELECT * 
+  FROM emp
+  WHERE job LIKE 'MAN%';
+  
+18.  SELECT * 
+  FROM emp
+  WHERE comm IS NOT NULL AND comm!=0;
+  
+19.SELECT * 
+FROM EMP 
+WHERE hiredate LIKE '%FEB-81' OR hiredate LIKE '%MAR-81' OR hiredate LIKE '%JAN-81';
+
+20,21.SELECT sal 
+FROM EMP 
+WHERE ename IN ('KING','BLAKE','FORD','SMITH');
+
+22.SELECT ename 
+FROM EMP 
+WHERE sal < 3500;
+
+23.SELECT * 
+FROM EMP 
+WHERE job LIKE 'CLERK';
+
+24.SELECT ename,sal*12 AS 'ANNUAL SAL' 
+FROM EMP ;
+
+25.SELECT ename,(sal*(1.2))*12 AS 'ANNUAL SAL' 
+FROM EMP 
+WHERE ename LIKE 'FORD';
+
+26.SELECT deptno,SUM(sal) AS 'TOTAL SAL' 
+FROM EMP 
+GROUP BY deptno;
+
+27.SELECT ename,MIN(sal) AS 'LOWEST SAL' 
+FROM EMP 
+WHERE deptno =10;
+
+28.SELECT ROUND(AVG(sal),2) AS 'AVERAGE SAL' 
+FROM EMP 
+WHERE job LIKE 'MAN%';
+
+29.SELECT SUM(sal) AS 'TOTAL SAL' 
+FROM EMP 
+WHERE job LIKE 'SALES%';
+
+30.SELECT ROUND(AVG(sal),2) LOW_AVG_SAL 
+FROM EMP 
+GROUP BY deptno
+HAVING low_avg_sal=MIN(LOW_AVG_SAL); (NOT WORKING)
+
+31.SELECT job,COUNT(ename) no_of_employees 
+FROM EMP 
+GROUP BY job;
+
+32.SELECT MAX(sal) Max_sal 
+FROM EMP 
+WHERE job LIKE 'ANALYST';
+
+33.SELECT MAX(comm) Max_comm 
+FROM EMP ;
+
+34.SELECT COUNT(deptno) 
+FROM dept ;
+
+35.SELECT ename 
+FROM EMP 
+WHERE ename LIKE '__L%';

@@ -1,0 +1,82 @@
+1.SELECT d.deptno,COUNT(e.empno) count_emps 
+FROM dept d LEFT OUTER JOIN emp e
+ON e.deptno=d.deptno
+GROUP BY d.deptno
+HAVING count_emps=0;
+
+2.SELECT ename,job 
+FROM emp
+WHERE mgr IS NULL;
+
+3.SELECT e.ename,e.job 
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno
+WHERE d.loc LIKE 'NEW YORK' AND e.comm>10;
+
+4.SELECT COUNT(e.ename) no_of_employees 
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno
+WHERE d.loc LIKE 'Chicago';
+
+5.SELECT e.ename,e.job
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno
+WHERE d.loc LIKE 'Chicago';
+
+6.SELECT e.ename,d.loc
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno
+ORDER BY 2;
+
+7.SELECT d.deptno,COUNT(e.ename) no_of_employees
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno
+GROUP BY 1;
+
+8.SELECT ename,job,hiredate
+FROM emp
+WHERE hiredate LIKE '%MAR%81' OR hiredate LIKE '%MAR%80' OR hiredate LIKE '%FEB%81' OR hiredate LIKE '%FEB%80' OR hiredate LIKE '%JAN%81' OR hiredate LIKE '%JAN%80';  
+
+
+9.SELECT COUNT(ename)
+FROM emp
+WHERE job LIKE 'MAN%' ;
+
+10.SELECT ename,job 
+FROM emp
+WHERE mgr IS NULL;
+
+11.SELECT ename,deptno 
+FROM emp
+WHERE ename LIKE 'SMITH';
+
+12.SELECT e.ename,e.job 
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno
+WHERE d.loc NOT LIKE 'BOSTON' AND e.job LIKE 'SALES%';
+
+13.SELECT e.ename,d.loc 
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno;
+
+14.SELECT ename,sal 
+FROM emp 
+WHERE job LIKE 'SALES%' AND sal < (SELECT sal FROM emp WHERE ename LIKE 'MILLER');
+
+15.SELECT e.ename,e.job,d.loc 
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno
+WHERE d.loc LIKE 'Chicago';
+
+16.SELECT ename 
+FROM emp 
+WHERE sal > (SELECT MIN(sal) FROM emp WHERE job LIKE 'MAN%' );
+
+17.SELECT e.ename,e.empno 
+FROM emp e JOIN dept d 
+ON e.deptno=d.deptno
+WHERE d.dname LIKE 'ACCOUNTING';
+
+18.SELECT empno,ename,job 
+FROM emp 
+WHERE job LIKE 'MAN%';
