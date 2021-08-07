@@ -1,0 +1,51 @@
+1.SELECT deptno,SUM(sal) SUM  
+FROM EMP
+GROUP BY deptno;
+
+2.SELECT deptno,ename,MIN(sal) LowSal  
+FROM EMP
+WHERE deptno=10;
+
+3.SELECT ROUND(AVG(sal),2) AVERGAE  
+FROM EMP
+WHERE job LIKE 'MAN%';
+
+4.SELECT SUM(sal) SALES_SAL  
+FROM EMP
+WHERE job LIKE 'SALES%';
+
+5.SELECT job,COUNT(empno) 'number of people'  
+FROM EMP
+GROUP BY job;
+
+6.SELECT job,COUNT(empno) 'number of people'  
+FROM EMP
+WHERE hiredate LIKE '%MAY%81' OR hiredate LIKE '%JUN%81' OR hiredate LIKE '%JUL%81' OR hiredate LIKE  '%AUG%81' OR hiredate LIKE  '%SEP%81' OR hiredate LIKE  '%OCT%81' OR hiredate LIKE  '%NOV%81' OR hiredate LIKE  '%DEC%81' 
+GROUP BY job;
+
+7.SELECT MAX(sal) MAX_SAL
+FROM emp
+WHERE job LIKE 'AN%';
+
+8.SELECT MAX(comm) High_comm
+FROM emp;
+
+9.SELECT COUNT(DISTINCT deptno) departments
+FROM emp;
+SELECT COUNT(deptno) 
+FROM DEPT;
+
+10.SELECT deptno,ROUND(AVG(sal),2) AVERAGE
+FROM emp
+GROUP BY deptno;
+
+11.SELECT job,ROUND(AVG(sal),2) AVERAGE
+FROM emp
+GROUP BY job
+HAVING AVERAGE<2000
+ORDER BY 2;
+
+12.SELECT deptno,SUM(sal) TOTAL_SAL
+FROM emp
+GROUP BY deptno
+HAVING TOTAL_SAL>10000;

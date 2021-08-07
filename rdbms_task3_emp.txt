@@ -1,0 +1,47 @@
+1. SELECT empno,ename 
+FROM emp 
+WHERE ename LIKE 'James';
+
+2. SELECT empno,ename,sal 
+FROM emp 
+WHERE ename LIKE 'King';
+
+3. SELECT ename,job 
+FROM emp 
+WHERE job LIKE 'president';
+
+4. SELECT dname,loc 
+FROM dept 
+WHERE loc LIKE 'BOSTON';
+
+5. SELECT deptno,dname 
+FROM DEPT 
+WHERE dname LIKE 'ACCOUNTING';
+
+6. SELECT ename,sal 
+FROM EMP 
+WHERE sal BETWEEN 1500 AND 3000;
+
+7. SELECT * 
+FROM EMP 
+WHERE job LIKE 'MANAGER';
+
+8. SELECT * 
+FROM EMP 
+WHERE comm IS NOT NULL AND comm >0;
+
+9. SELECT ename 
+FROM EMP 
+WHERE deptno = 30 AND job LIKE 'MANAGER';
+
+10. SELECT * 
+FROM EMP 
+WHERE hiredate LIKE '%FEB-81' OR '%MAR-81' OR '%JAN-81';
+
+11. SELECT ename,sal 
+FROM EMP 
+WHERE ename in ('KING','BLAKE','FORD','SMITH');
+
+12. SELECT hiredate,job 
+FROM EMP 
+WHERE job IN ('PRESIDENT','MANAGER');

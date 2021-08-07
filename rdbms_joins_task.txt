@@ -1,0 +1,40 @@
+1.SELECT e.ename,e.empno 
+FROM emp e JOIN dept d
+ON e.deptno=d.deptno
+WHERE d.dname LIKE 'ACCOUNTING';
+
+2.SELECT ename,sal 
+FROM emp
+WHERE sal > (SELECT MIN(sal) FROM emp where job LIKE 'MANAGER');
+
+3.SELECT e.ename,e.job,d.loc  
+FROM emp e JOIN dept d
+ON e.deptno=d.deptno AND d.loc LIKE 'Chicago';
+
+4.SELECT COUNT(e.ename) people_in_chicago 
+FROM emp e JOIN dept d
+ON e.deptno=d.deptno AND d.loc LIKE 'Chicago';
+
+5.SELECT e.ename,d.loc  
+FROM emp e JOIN dept d
+ON e.deptno=d.deptno AND d.loc LIKE 'Chicago';
+
+6.SELECT e.ename,d.loc  
+FROM emp e JOIN dept d
+ON e.deptno=d.deptno
+ORDER BY 2;
+
+7.SELECT ename,job 
+FROM EMP 
+WHERE mgr IS NULL;
+
+8.SELECT d.deptno,d.dname,COUNT(e.empno) employees 
+FROM dept d LEFT OUTER JOIN emp e
+ON d.deptno=e.deptno
+GROUP BY d.deptno
+HAVING employees=0;
+
+9.SELECT worker.ename || ' works for ' 
+       || manager.ename employees_and_managers
+FROM   emp worker, emp manager
+WHERE  worker.mgr = manager.empno 
