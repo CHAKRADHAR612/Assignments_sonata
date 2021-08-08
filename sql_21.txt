@@ -107,10 +107,8 @@ WHERE job LIKE 'MAN%';
 FROM EMP 
 WHERE job LIKE 'SALES%';
 
-30.SELECT ROUND(AVG(sal),2) LOW_AVG_SAL 
-FROM EMP 
-GROUP BY deptno
-HAVING low_avg_sal=MIN(LOW_AVG_SAL); (NOT WORKING)
+30.SELECT MIN(avg_sal) 
+FROM (SELECT ROUND(AVG(sal),2) avg_sal FROM emp GROUP BY deptno);
 
 31.SELECT job,COUNT(ename) no_of_employees 
 FROM EMP 
