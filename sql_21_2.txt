@@ -28,10 +28,9 @@ FROM emp e JOIN dept d
 ON e.deptno=d.deptno
 ORDER BY 2;
 
-7.SELECT d.deptno,COUNT(e.ename) no_of_employees
-FROM emp e JOIN dept d 
-ON e.deptno=d.deptno
-GROUP BY 1;
+7.SELECT COUNT(DISTINCT d.deptno) 'no_depts',COUNT(e.empno) 'no_employees'
+FROM dept d LEFT JOIN emp e
+ON e.deptno=d.deptno;
 
 8.SELECT ename,job,hiredate
 FROM emp
