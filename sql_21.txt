@@ -44,9 +44,9 @@ WHERE sal IN (800,950,3000,5000)
   FROM emp
   WHERE ename LIKE '%A%';
 
-13.  SELECT * 
+13.SELECT * 
   FROM emp
-  WHERE hiredate BETWEEN '1%' AND '18%';
+  WHERE CAST(hiredate AS int) <19;
   
 14.  SELECT empno 
   FROM emp
