@@ -1,0 +1,27 @@
+1) Hibernate is data base independent, same code will work for all data bases like ORACLE,MySQL ,SQLServer etc.
+In case of JDBC query must be data base specific.
+
+2) As Hibernate is set of Objects , you don't need to learn SQL language.
+You can treat TABLE as a Object .
+In case of JDBC you need to learn SQL.
+
+3) Don't need Query tuning in case of Hibernate. If you use Criteria Quires in Hibernate then hibernate automatically tuned your query and return best result with performance.
+In case of JDBC you need to tune your queries.
+
+4) You will get benefit of Cache. Hibernate support two level of cache. First level and 2nd level. So you can store your data into Cache for better performance.
+In case of JDBC you need to implement your java cache .
+
+5) Hibernate supports Query cache and It will provide the statistics about your query and database status.
+JDBC Not provides any statistics.
+
+6) Development fast in case of Hibernate because you don't need to write queries.
+
+7) No need to create any connection pool in case of Hibernate. You can use c3p0.
+In case of JDBC you need to write your own connection pool.
+
+8) In the xml file you can see all the relations between tables in case of Hibernate. Easy readability.
+
+9) You can load your objects on start up using lazy=false in case of Hibernate.
+JDBC Don't have such support.
+
+10 ) Hibernate Supports automatic versioning of rows but JDBC Not.
